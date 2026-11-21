@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MILLIY TAOMLAR — O‘zbek milliy taomlari</title>
+<meta name="description" content="O‘zbek milliy taomlari — palov, somsa, manti, lag‘mon va boshqalar. Onlayn buyurtma.">
+<meta property="og:title" content="MILLIY TAOMLAR"><meta property="og:description" content="O‘zbek milliy taomlari — millatimiz faxri!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader"><div class="spin"></div><b>MILLIY TAOMLAR</b></div>
+<header id="nav"><div class="wrap bar">
+  <a href="#home" class="logo"><i class="fa-solid fa-bowl-rice"></i> MILLIY <span>TAOMLAR</span></a>
+  <button id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  <nav id="menu">
+    <a href="#home">Bosh sahifa</a><a href="#taomlar">Taomlar</a><a href="#kategoriyalar">Kategoriyalar</a>
+    <a href="#haqimizda">Biz haqimizda</a><a href="#galereya">Galereya</a><a href="#yangiliklar">Yangiliklar</a><a href="#aloqa">Aloqa</a>
+    <a href="#login" id="navLogin">Kirish</a><a href="#register" id="navReg" class="btn sm">Ro‘yxatdan o‘tish</a>
+    <a href="#account" id="navAcc" hidden><i class="fa-solid fa-user"></i> Kabinet</a>
+    <button id="theme" aria-label="Dark mode"><i class="fa-solid fa-moon"></i></button>
+    <a href="#cart" class="cartbtn"><i class="fa-solid fa-cart-shopping"></i><em id="cartCount">0</em></a>
+  </nav></div></header>
+
+<main>
+<div id="home">
+<section class="hero" id="bosh"><div class="wrap hero-in">
+  <small>MILLIY TAOMLAR</small><h1>O‘ZBEK MILLIY TAOMLARI</h1>
+  <h2>Milliy ta’m, unutilmas lazzat!</h2>
+  <p>O‘zbek xalqining asrlar davomida shakllangan boy oshxona madaniyatini biz bilan kashf eting.</p>
+  <div class="cta"><a href="#taomlar" class="btn">Taomlarni ko‘rish</a><a href="#taomlar" class="btn ghost" onclick="orderRandom()">Buyurtma berish</a></div>
+  <p class="slogan">“O‘zbek milliy taomlari — millatimiz faxri!”</p>
+</div></section>
+
+<section id="taomlar" class="sec"><div class="wrap">
+  <h3 class="title">Milliy taomlar katalogi</h3>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Taom qidirish...">
+    <select id="sort"><option value="">Saralash</option><option value="asc">Narx: arzondan</option><option value="desc">Narx: qimmatdan</option><option value="rate">Reyting</option><option value="pop">Mashhurlari</option></select>
+    <button id="favOnly" class="chip"><i class="fa-solid fa-heart"></i> Sevimlilar</button>
+  </div>
+  <div id="chips" class="chips"></div>
+  <div id="grid" class="grid"></div>
+</div></section>
+
+<section id="kategoriyalar" class="sec alt"><div class="wrap">
+  <h3 class="title">Kategoriyalar</h3><div id="cats" class="cats"></div>
+</div></section>
+
+<section id="haqimizda" class="sec"><div class="wrap about">
+  <div><h3 class="title l">Biz haqimizda</h3>
+  <p><b>Tarix.</b> O‘zbek oshxonasi Buyuk Ipak yo‘li chorrahasida shakllangan: dehqonchilik, chorvachilik va savdo-sotiq mahsulotlari Samarqand, Buxoro, Xiva, Farg‘ona va Toshkent dasturxonlarida o‘z ifodasini topgan.</p>
+  <p><b>Hududiy taomlar.</b> Samarqandda palov guruchi alohida pishiriladi, Farg‘onada mayiz va no‘xat ishlatiladi, Toshkentda esa devzira guruchi va qizil sabzi asosiy hisoblanadi. Xorazmda dimlama va tuxum barak mashhur.</p>
+  <p><b>An’analar.</b> Oshni oshpaz-ustalar qozonda, o‘tinda pishiradi. Tandir somsasi, qaynoq non va choy bilan mehmon kutish — xalqimizning azaliy odati.</p>
+  <p><b>Oilaviy dasturxon.</b> Dasturxon — baraka va mehmondo‘stlik ramzi. Mehmon kelsa, birinchi bo‘lib non va choy tortiladi.</p></div>
+  <div class="stats"><div><b>22</b>ta taom</div><div><b>12</b>yil tajriba</div><div><b>50K+</b>mijoz</div><div><b>4.9</b>reyting</div></div>
+</div></section>
+
+<section id="galereya" class="sec alt"><div class="wrap">
+  <h3 class="title">Galereya</h3><div id="gallery" class="masonry"></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h3 class="title">Mijozlar fikrlari</h3>
+  <div class="tcar"><button class="nv" id="tPrev"><i class="fa-solid fa-chevron-left"></i></button><div id="tbox"></div><button class="nv" id="tNext"><i class="fa-solid fa-chevron-right"></i></button></div>
+</div></section>
+
+<section id="yangiliklar" class="sec alt"><div class="wrap">
+  <h3 class="title">Yangiliklar va retseptlar</h3><div id="news" class="grid"></div>
+</div></section>
+
+<section id="aloqa" class="sec"><div class="wrap contact">
+  <div><h3 class="title l">Aloqa</h3>
+    <p><i class="fa-solid fa-phone"></i> +998 71 123 45 67</p>
+    <p><i class="fa-solid fa-envelope"></i> info@milliytaomlar.uz</p>
+    <p><i class="fa-solid fa-location-dot"></i> Toshkent sh., Amir Temur ko‘chasi, 1</p>
+    <p><i class="fa-solid fa-clock"></i> Har kuni 09:00 — 23:00</p>
+    <p><a href="https://t.me/milliytaomlar" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a> &nbsp; <a href="https://instagram.com/milliytaomlar" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></p>
+    <iframe title="Xarita" loading="lazy" src="https://www.google.com/maps?q=Tashkent+Amir+Temur&output=embed"></iframe></div>
+  <form id="contactForm" novalidate><h4>Xabar yuborish</h4>
+    <input name="n" placeholder="Ismingiz"><input name="e" placeholder="Email"><textarea name="m" rows="5" placeholder="Xabaringiz"></textarea>
+    <p class="err" id="cErr"></p><button class="btn">Yuborish</button></form>
+</div></section>
+</div>
+
+<!-- SAHIFALAR -->
+<section id="page-register" class="page"><form class="card auth" id="regForm" novalidate>
+  <h3>Ro‘yxatdan o‘tish</h3>
+  <div class="two"><input name="fn" placeholder="Ism"><input name="ln" placeholder="Familiya"></div>
+  <input name="ph" placeholder="Telefon: +998901234567"><input name="em" placeholder="Email">
+  <input name="pw" type="password" placeholder="Parol (kamida 6 belgi)"><input name="pw2" type="password" placeholder="Parolni tasdiqlang">
+  <label class="chk"><input type="checkbox" name="ag"> Foydalanish shartlariga roziman</label>
+  <p class="err"></p><button class="btn">Ro‘yxatdan o‘tish</button><p>Akkauntingiz bormi? <a href="#login">Kirish</a></p></form></section>
+<section id="page-login" class="page"><form class="card auth" id="logForm" novalidate>
+  <h3>Kirish</h3><input name="id" placeholder="Email yoki telefon">
+  <div class="pwrow"><input name="pw" type="password" placeholder="Parol"><i class="fa-solid fa-eye" id="eye"></i></div>
+  <label class="chk"><input type="checkbox" name="rm"> Meni eslab qol</label><a href="#" id="forgot">Parolni unutdingizmi?</a>
+  <p class="err"></p><button class="btn">Kirish</button><p>Yangimisiz? <a href="#register">Ro‘yxatdan o‘ting</a></p></form></section>
+<section id="page-cart" class="page"><div class="wrap"><h3 class="title">Savatcha</h3><div id="cartBox"></div></div></section>
+<section id="page-account" class="page"><div class="wrap"><h3 class="title">Shaxsiy kabinet</h3><div id="accBox"></div></div></section>
+</main>
+
+<footer><div class="wrap fgrid">
+  <div><a class="logo" href="#home"><i class="fa-solid fa-bowl-rice"></i> MILLIY <span>TAOMLAR</span></a><p>O‘zbek milliy taomlari — millatimiz faxri! Haqiqiy ta’m, uyingizgacha.</p></div>
+  <div><h5>Tezkor havolalar</h5><a href="#taomlar">Taomlar</a><a href="#haqimizda">Biz haqimizda</a><a href="#galereya">Galereya</a><a href="#aloqa">Aloqa</a></div>
+  <div><h5>Kategoriyalar</h5><div id="fcats"></div></div>
+  <div><h5>Aloqa</h5><a>+998 71 123 45 67</a><a>info@milliytaomlar.uz</a>
+    <div class="soc"><a href="https://t.me/milliytaomlar"><i class="fa-brands fa-telegram"></i></a><a href="https://instagram.com/milliytaomlar"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-facebook"></i></a></div></div>
+</div><div class="copy">© 2026 MILLIY TAOMLAR. Barcha huquqlar himoyalangan.</div></footer>
+
+<div id="modal" class="modal"><div class="mbox" id="mbox"></div></div>
+<div id="lightbox" class="modal dark"><button class="x" id="lbX">&times;</button><img id="lbImg" alt=""></div>
+<button id="top"><i class="fa-solid fa-arrow-up"></i></button><div id="toasts"></div>
+<script src="app.js"></script>
+</body></html>
